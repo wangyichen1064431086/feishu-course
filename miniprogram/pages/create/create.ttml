@@ -1,0 +1,32 @@
+<view class="creation">
+  <view class="select-wrapper">
+    <input
+      value="{{selectedGroupName}}"
+      style="border: 1px #eeeeee solid;border-radios: 10rpx;text-align: center;width:500rpx;padding: 20rpx;margin: 0 auto"
+      bindconfirm="handleGroupConfirm"
+      placeholder="邀请 Lark 群（英文或拼音）"
+    />
+    <view class="group-list" tt:if="{{groupList.length}}">
+      <view tt:for="{{groupList}}" class="group-item" id="{{item.name}}" data-chatId="{{item.chat_id}}" data-chatName="{{item.name}}" bindtap="handleGrouptap">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+  <view class="form" >
+    <picker
+      mode="date"
+      value="{{date}}"
+      start="{{currDate}}"
+      bindchange="bindDateChange"
+      fields="day"
+      style="width: 570rpx;margin: 0 auto;margin-bottom: 60rpx;"
+    >
+      <view class="picker">
+          选择日期: {{date}}
+      </view>
+    </picker>
+    <view class="secret-option">
+    </view>
+    <button bindtap="handleCreateTap" class="step-button type-button" style="margin-top: 40rpx;">创建日程</button>
+  </view>
+</view>

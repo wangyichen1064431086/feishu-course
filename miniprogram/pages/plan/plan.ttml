@@ -1,0 +1,19 @@
+<view tt:if={{planList.length}} class="plan-list">
+  <view class="plan-item" tt:for="{{planList}}">
+    <image class="img" src="./../../assert/secret.png" tt:if="{{item.isSecret}}" />
+    <image tt:else class="img" src="./../../assert/party.png" />
+    <view class="content">
+      <view class="time">{{item.time}}</view>
+      <view class="group">参与群：{{item.groupName}}</view>
+      <view class="detail" tt:if="{{!item.isSecret}}">
+        <view class="name">{{item.shopName}}</view>
+        <view class="address">{{item.address}}</view>
+      </view>
+      <view tt:else class="detail secret">保密</view>
+    </view>
+  </view>
+</view>
+<view tt:if="{{isEmpty}}" class="empty">
+  <image class="empty-img" src="./../../assert/empty.png" />
+  <view>暂无计划</view>
+</view>

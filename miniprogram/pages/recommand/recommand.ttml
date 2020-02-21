@@ -1,0 +1,34 @@
+<!-- pages/recommand/recommand.ttml -->
+<view>
+  <scroll-view
+    class="scroll-wrapper"
+    scroll-y
+    scroll-with-animation
+    scroll-into-view="{{currentItem}}"
+  >
+    <view
+      class="recommand-item"
+      bindlongpress="handleItemTap"
+      data-address="{{item.detail_address}}"
+      data-shopName="{{item.name}}"
+      tt:for="{{recommandList}}"
+      id="item-{{index}}"
+    >
+      <view class="content">
+          <image class="img" src="{{item.img}}" />
+          <text class="name">{{item.name}}</text>
+          <view class="params">
+              <view class="param type-param">{{item.food_type}}</view>
+              <view class="param">¥ {{item.price}}</view>
+              <view class="star-list">
+                  <image class="star" src="./../../assert/star.png" tt:for="{{item.starList}}" />
+              </view>
+          </view>
+          <view tt:if="{{item.group_buying}}" style="font-size:24rpx;text-align:center">{{item.group_buying}}</view>
+          <text class="address">{{item.detail_address}}</text>
+          <image id="item-{{index}}" bindtap="handleDropClick" src="./../../assert/dropdown.png" class="dropdown" />
+      </view>
+    </view>
+  </scroll-view>
+  <tabbar></tabbar>
+</view>

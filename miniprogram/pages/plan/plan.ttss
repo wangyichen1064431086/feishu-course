@@ -1,0 +1,62 @@
+.plan-list {
+  padding: 40rpx;
+}
+
+.plan-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border: 1px solid #eeeeee;
+  border-radius: 10rpx;
+  margin-bottom: 40rpx;
+}
+
+.plan-item:last-child {
+  margin-bottom: 0;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.address, .name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 360rpx;
+}
+
+.address {
+  font-size: 24rpx;
+}
+
+.detail {
+  height: 100rpx;
+}
+
+.content {
+  flex: 360rpx 0 0;
+  font-size: 32rpx;
+  height: 200rpx;
+}
+
+.content, .detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.empty {
+  margin: 28vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-img {
+  margin-bottom: 40rpx;
+  width: 300rpx;
+  height: 260rpx;
+}

@@ -1,0 +1,93 @@
+.scroll-wrapper {
+  height: 100vh;
+}
+
+.recommand-item {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 70rpx;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 82%;
+}
+
+.img {
+  width: 600rpx;
+  height: 500rpx;
+}
+
+.name {
+  font-family: 'Lucida Sans';
+  font-size: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.params {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.param {
+  display: block;
+  padding: 0 20rpx;
+  font-size: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-right:  1px solid #888888;
+}
+
+.type-param {
+  font-size: 28rpx;
+}
+
+.type-text {
+  display: block;
+  margin-top: -3rpx;
+}
+
+.people-param {
+  display: flex;
+}
+
+.people {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.star-list {
+  margin-left: 20rpx;
+}
+
+.star {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.address {
+  font-size: 32rpx;
+  color: #666666;
+  text-align: center;
+}
+
+.dropdown {
+  width: 60rpx;
+  height: 70rpx;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,56 @@
+<!-- pages/search/search.ttml -->
+<view class="search">
+    <view tt:if="{{isSearching && searchList.length}}">
+        <scroll-view
+            class="scroll-wrapper"
+            scroll-y
+            scroll-with-animation
+        >
+        <view class="list-item" bindtap="handleItemTap" tt:for="{{searchList}}" data-shopName="{{item.name}}" data-address="{{item.detail_address}}" >
+            <image class="img" src="{{item.img}}" />
+            <view class="content">
+                <text class="name">{{item.name}}</text>
+                <view class="params">
+                    <view class="param type-param">{{item.food_type}}</view>
+                        <view class="param">¥ {{item.price}}</view>
+                    </view>
+                    <view class="star-list">
+                        <image class="star" src="./../../assert/star.png" tt:for="{{item.starList}}" />
+                    </view>
+                    <view tt:if="{{item.group_buying}}" style="font-size:24rpx;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;max-width: 380rpx;">{{item.group_buying}}</view>
+                    <view class="address">{{item.detail_address}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view tt:if="{{isSearching && isEmpty}}" class="empty">
+        <image class="empty-img" src="./../../assert/empty.png" />
+        <view>无匹配结果</view>
+    </view>
+    <view tt:if="{{isInputting}}" class="option-wrapper">
+        <view tt:if="{{currStep === 0}}" class="step step-budget">
+            <view class="label">预算</view>
+            <image class="step-img budget-img" src="./../../assert/money.png" />
+            <input
+                style="text-align: center; margin-top: 20rpx; border-bottom: 1px solid #eeeeee;width: 100rpx; font-size=40rpx;"
+                class="price-input"
+                value="{{budget}}"
+                type="number"
+                bindfocus="handleBudgetFocus"
+                bindblur="handleBudgetBlur"
+            />
+            <button class="step-button" bindtap="nextStep">下一步</button>
+        </view>
+        <view tt:else class="step type-step step-type">
+            <view class="label">类型</view>
+            <view class="type-wrapper">
+                <view id="outdoor" class="{{currOption === 'outdoor' ? 'type-option active-option' : 'type-option' }}" bindtap="handleTypeTap">户外</view>
+                <view id="indoor" class="{{currOption === 'indoor' ? 'type-option active-option' : 'type-option' }}" bindtap="handleTypeTap">室内</view>
+                <view id="food" class="{{currOption === 'food' ? 'type-option active-option' : 'type-option' }}" bindtap="handleTypeTap">吃饭</view>
+            </view>
+            <button class="step-button type-button" bindtap="nextStep">下一步</button>
+        </view>
+        <image tt:if="{{currStep !== 0}}" bindtap="handlePrev" class="img-prev" src="./../../assert/prev.png" />
+    </view>
+    <progress tt:if="{{isInputting}}" class="progress" background-color="rgba(253,120,52, .1)" stroke-width="30" percent="{{percent}}" active-color="#fe6a1b" active active-mode="forwards" />
+</view>

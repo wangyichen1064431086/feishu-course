@@ -1,0 +1,6 @@
+<!-- pages/recommand/components/tabbar/tabbar.ttml -->
+<view class="tabbar">
+    <view class="tab" bindtap="toPlanPage"><image style="width: 100rpx; height: 100rpx" mode="scaleToFill" src="./../../../../assert/todo.png" /></view>
+    <view class="add-button" bindtap="toSearchPage"><view class="icon-wrapper">+</view></view>
+    <view class="tab" bindtap="toHistoryPage"><image style="width: 100rpx; height: 100rpx" mode="scaleToFill" src="./../../../../assert/memory.png" /></view>
+</view>

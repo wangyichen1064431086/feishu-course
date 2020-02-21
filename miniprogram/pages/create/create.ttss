@@ -1,0 +1,50 @@
+.select-wrapper {
+    padding-top: 10vh;
+}
+
+.step-button {
+    background: #fe6a1b;
+    color: #fff;
+    width: 200rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    margin-top: 60rpx;
+    border: #fe6a1b 1px solid;
+}
+.step-button:after {
+  display: none;
+}
+
+.group-list {
+  margin-top: 40rpx;
+  padding: 0 70rpx;
+  height: 30vh;
+  overflow-y: scroll;
+}
+
+.group-item {
+  border-top: 1px solid #eeeeee;
+  height: 100rpx;
+  text-align: center;
+  width: 80vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 100rpx;
+}
+
+.group-item:last-child {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.secret-option {
+  display: flex;
+  width: 570rpx;
+  margin: auto;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+
+.form {
+  padding-top: 40rpx;
+}

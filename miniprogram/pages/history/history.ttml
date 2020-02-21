@@ -1,0 +1,17 @@
+<view tt:if="{{historyList.length}}" class="history-list">
+  <view class="history-item" tt:for="{{historyList}}">
+    <image class="img" src="./../../assert/party.png" />
+    <view class="content">
+        <view class="time">{{item.time}}</view>
+        <view class="group">参与群：{{item.groupName}}</view>
+        <view class="detail">
+            <view class="name">{{item.shopName}}</view>
+            <view class="address">{{item.address}}</view>
+        </view>
+    </view>
+  </view>
+</view>
+<view tt:if="{{isEmpty}}" class="empty">
+  <image class="empty-img" src="./../../assert/empty.png" />
+  <view>暂无历史</view>
+</view>
